@@ -21,9 +21,10 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-    console.log("Database connected successfully");
+    // console.log("Database connected successfully");
     const database = client.db("travelOffer");
     const servicesCollection = database.collection("services");
+    const orderCollection = database.collection("orders");
 
     // GET API
     app.get("/services", async (req, res) => {
